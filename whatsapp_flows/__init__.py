@@ -1,6 +1,7 @@
 import uuid
 import requests
-
+from typing import Dict, Any
+import json
 
 class FlowsManager:
     def __init__(
@@ -435,3 +436,11 @@ class FlowsManager:
         deprecate_url = f"{self.base_url}/{flow_id}/deprecate"
         response = requests.post(deprecate_url, headers=self.auth_header)
         return response
+
+
+    def get_flows_response(self, data: Dict[Any, Any]):
+        flow_response = ["entry"][0]["changes"][0]["value"]["messages"][0][
+            "interactive"
+        ]["nfm_reply"]["response_json"]
+        flow_data = json.loads(flow_response)
+        print(flow_data)
