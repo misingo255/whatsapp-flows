@@ -8,12 +8,12 @@ with open(path.join(this_directory, "description.md"), encoding="utf-8") as f:
     long_description = f.read()
 
 setup(
-    name="",
+    name="whatsapp-flows",
     version="0.1.0",
     description="Opensource python wrapper for Meta Whatsapp Flows Cloud API",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/Neurotech-HQ/sarufi-python-sdk",
+    url="https://github.com/misingo255/whatsapp-flows",
     download_url="https://github.com/Neurotech-HQ/sarufi-python-sdk/archive/refs/tags/v0.0.2.tar.gz",
     author="Wilbert Misingo",
     author_email="wilbertmisingo@gmail.com",

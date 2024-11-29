@@ -51,7 +51,8 @@ You'll need to gather the following credentials from your Meta Developers accoun
 - `WHATSAPP_BUSINESS_ACCOUNT_ID`
 
 ### 8. Create a Flow on Flow Development Playground
-Use the [Flow Development Playground](https://developers.facebook.com/docs/whatsapp/flows/playground/) to design your WhatsApp flow. For reference, a sample flow for the **AZAM MARINES FERRIES TICKETING** use case is provided in the `assets` folder of this project.
+Use the [Flow Development Playground](https://developers.facebook.com/docs/whatsapp/flows/playground/) to design your WhatsApp flow.
+
 
 ### 9. Deploy the Middleware/Webhook
 Deploy the middleware or webhook that will handle the flow execution. This is a crucial step to ensure that your flow operates correctly with WhatsApp.
