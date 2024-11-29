@@ -4,7 +4,8 @@ import os
 
 # Read the contents of your description file
 this_directory = os.getcwd()
-with open(path.join(this_directory, "description.md"), encoding="utf-8") as f:
+description_file_path = path.join(this_directory, "description.md")
+with open(description_file_path, encoding="utf-8") as f:
     long_description = f.read()
 
 setup(
