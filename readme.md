@@ -1,6 +1,3 @@
-Here is the modified **WhatsApp Flows Guide** with the provided examples integrated into the steps:
-
----
 
 # WhatsApp Flows Guide
 
