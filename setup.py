@@ -1,8 +1,9 @@
 from os import path
 from setuptools import setup, find_packages
+import os
 
 # Read the contents of your description file
-this_directory = path.abspath(path.dirname(__file__))
+this_directory = os.getcwd()
 with open(path.join(this_directory, "description.md"), encoding="utf-8") as f:
     long_description = f.read()
 
