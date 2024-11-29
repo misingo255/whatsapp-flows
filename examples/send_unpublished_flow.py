@@ -22,7 +22,7 @@ try:
         flow_cta_body_text="Hello, welcome to our general shop!!",
         flow_cta_footer_text="Click the button to continue.",
         flow_cta_button_text="START SHOPPING",
-        recipient_phone_number="255753456789"
+        recipient_phone_number="255753456789",
     )
     print(response)
 except Exception as e:

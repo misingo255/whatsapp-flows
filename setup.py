@@ -1,8 +1,7 @@
 from os import path
-from setuptools import setup
+from setuptools import setup, find_packages
 
-# read the contents of your description file
-
+# Read the contents of your description file
 this_directory = path.abspath(path.dirname(__file__))
 with open(path.join(this_directory, "description.md"), encoding="utf-8") as f:
     long_description = f.read()
@@ -17,8 +16,8 @@ setup(
     author="Wilbert Misingo",
     author_email="wilbertmisingo@gmail.com",
     license="Apache",
-    packages=["requests"],
-    install_requires=["requests"],
+    packages=find_packages(),  # Automatically find your packages
+    install_requires=["requests"],  # External dependencies
     keywords=[
         "Whatsapp",
         "Whatsapp Flows",

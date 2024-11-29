@@ -37,7 +37,6 @@ app.add_middleware(
 FLOW_ID = "1234567890"
 
 
-
 @app.get("/webhook")
 async def wehbook_verification(request: Request):
     if (
@@ -77,19 +76,18 @@ async def webhook_processing(request: Request, tasks: BackgroundTasks):
 
         if text:
             tasks.add_task(
-                    FlowsManager.send_published_flow,
-                    FLOW_ID,
-                    user_phone_number,
-                )
+                FlowsManager.send_published_flow,
+                FLOW_ID,
+                user_phone_number,
+            )
         else:
             tasks.add_task(
-                    FlowsManager.send_unpublished_flow,
-                    FLOW_ID,
-                    user_phone_number,
-                )
+                FlowsManager.send_unpublished_flow,
+                FLOW_ID,
+                user_phone_number,
+            )
     else:
-            tasks.add_task(FlowsManager.get_flows_response, data)
+        tasks.add_task(FlowsManager.get_flows_response, data)
     return JSONResponse(
         content="CHAT MESSAGE PROCESSED SUCCESSFULL", status_code=status.HTTP_200_OK
     )
-

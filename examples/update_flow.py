@@ -16,7 +16,9 @@ flows_manager = FlowsManager(
 )
 
 try:
-    response = flows_manager.update_flow(flow_id="1234567890", new_flow_name="NEW FLOW NAME")
+    response = flows_manager.update_flow(
+        flow_id="1234567890", new_flow_name="NEW FLOW NAME"
+    )
     print(response)
 except Exception as e:
     print(e)
