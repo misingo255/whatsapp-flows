@@ -3,8 +3,8 @@ from setuptools import setup, find_packages
 import os
 
 # Read the contents of your description file
-this_directory = os.getcwd()
-description_file_path = path.join(this_directory, "description.md")
+this_directory = os.path.dirname(__file__)  # Change to the directory of setup.py
+description_file_path = path.join(this_directory, "README.md")
 with open(description_file_path, encoding="utf-8") as f:
     long_description = f.read()
 
@@ -19,7 +19,7 @@ setup(
     author_email="wilbertmisingo@gmail.com",
     license="Apache",
     packages=find_packages(),  # Automatically find your packages
-    install_requires=["requests"],  # External dependencies
+    install_requires=["requests>=2.31.0"],  # External dependencies
     keywords=[
         "Whatsapp",
         "Whatsapp Flows",
@@ -28,13 +28,12 @@ setup(
         "Whatsapp Python API",
         "Whatsapp Flows Python API",
     ],
-    python_requires=">=3.7",
+    python_requires=">=3.8",
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
         "Topic :: Software Development :: Build Tools",
         "License :: OSI Approved :: Apache License",
-        "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",

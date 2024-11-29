@@ -1,3 +1,6 @@
+Here is the modified **WhatsApp Flows Guide** with the provided examples integrated into the steps:
+
+---
 
 # WhatsApp Flows Guide
 
@@ -8,73 +11,219 @@ This guide outlines the steps to create and manage WhatsApp flows using the Meta
 
 In this guide, we'll focus on creating a WhatsApp flow app **without endpoints**. Follow the steps below to set up your flow and deploy it successfully.
 
+---
+
 ## Steps to Create a WhatsApp Flow App Without Endpoints
 
 ### 1. Create an App on Meta Developers Account
-To begin, you'll need to create an app on the [Meta Developers](https://developers.facebook.com/) platform. This app will serve as the foundation for managing your WhatsApp flows.
-
-### 2. Add a Phone Number
-Add a phone number to your app. This number will be associated with your WhatsApp Business account and will be used for sending and receiving messages.
-
-### 3. Enable Messaging Permissions
-Ensure that your app has the necessary messaging permissions enabled. This is crucial for your app to interact with WhatsApp messaging features.
-
-### 4. Create a Business on Meta Business Account
-Create a business account on [Meta Business](https://business.facebook.com/). This account will link your WhatsApp Business with your Meta Developers app.
-
-### 5. Verify Your Business
-Complete the verification process for your business. This step is essential for gaining access to additional features and permissions on the Meta platform.
-
-### 6. Request Extra/Advanced Permissions
-In your Meta Developers app, request the advanced permissions required for managing WhatsApp flows. These permissions will allow your app to handle complex flow operations.
-
-To manage WhatsApp flows via the API, you'll need the following permissions for your Meta Developers app:
-
-1. **`whatsapp_business_management`**: This permission allows your app to manage WhatsApp Business accounts, including creating and managing flows.
-
-2. **`whatsapp_business_messaging`**: This permission is necessary for sending and receiving messages via the WhatsApp Business API, which is crucial for flow execution.
-
-3. **`whatsapp_business_phone_number`**: This permission allows access to the phone numbers associated with your WhatsApp Business account, which is needed for managing flows linked to specific numbers.
-
-4. **`business_management`**: This broader permission grants access to manage business assets such as ad accounts, pages, and WhatsApp accounts.
-
-5. **`pages_messaging`**: While not directly related to flows, this permission might be necessary if your flows interact with Facebook Pages for messaging purposes.
-
-Ensure that your app is reviewed and approved for these permissions, as some require a business verification process. You can request these permissions through your app's settings on the [Meta Developers dashboard](https://developers.facebook.com/apps/).
-
-### 7. Obtain Necessary Credentials
-You'll need to gather the following credentials from your Meta Developers account. These will be used to configure your WhatsApp flows:
-
-- `WHATSAPP_BUSINESS_VERIFY_TOKEN`
-- `WHATSAPP_BUSINESS_PHONE_NUMBER_ID`
-- `WHATSAPP_BUSINESS_ACCESS_TOKEN`
-- `WHATSAPP_BUSINESS_ACCOUNT_ID`
-
-### 8. Create a Flow on Flow Development Playground
-Use the [Flow Development Playground](https://developers.facebook.com/docs/whatsapp/flows/playground/) to design your WhatsApp flow.
-
-
-### 9. Deploy the Middleware/Webhook
-Deploy the middleware or webhook that will handle the flow execution. This is a crucial step to ensure that your flow operates correctly with WhatsApp.
-
-### 10. Configure the Webhook URL
-Once the webhook is deployed, obtain the webhook URL and configure it in your Meta Developers account. This will link your flow with the WhatsApp messaging system.
-
-### 11. Create a Flow with a Desired Name
-Return to the Flow Development Playground and create a new flow by providing a unique name. This name will identify your flow in the system.
-
-### 12. Upload Your Flow JSON
-Upload the JSON file that defines your flow. You can use the provided sample JSON in the `assets` folder or create your own. Make sure to include the flow ID generated during the flow creation process.
-
-### 13. Test Your Flow
-Send your flow for testing. This will allow you to see how it behaves in a real-world scenario and make any necessary adjustments.
-
-### 14. Publish Your Flow
-If you're satisfied with the testing results, publish your flow. This makes it live and accessible to users.
-
-### 15. Final Testing
-After publishing, conduct a final round of testing to ensure everything is functioning as expected. This is the last step before your flow goes live for end-users.
+To begin, create an app on the [Meta Developers](https://developers.facebook.com/) platform. This app will serve as the foundation for managing your WhatsApp flows.
 
 ---
 
-For additional details on each step, refer to the official [Whatsapp Flows Documentation](https://developers.facebook.com/docs/whatsapp/flows/gettingstarted) or [Meta Developers Documentation](https://developers.facebook.com/docs/whatsapp) and the [Meta Business Help Center](https://www.facebook.com/business/help).
+### 2. Add a Phone Number
+Add a phone number to your app. This number will be associated with your WhatsApp Business account and used for sending and receiving messages.
+
+---
+
+### 3. Enable Messaging Permissions
+Ensure your app has the necessary messaging permissions enabled for interacting with WhatsApp messaging features.
+
+---
+
+### 4. Create a Business on Meta Business Account
+Create a business account on [Meta Business](https://business.facebook.com/). This links your WhatsApp Business with your Meta Developers app.
+
+---
+
+### 5. Verify Your Business
+Complete the verification process for your business to gain access to additional features and permissions.
+
+---
+
+### 6. Request Advanced Permissions
+Request the following advanced permissions for your Meta Developers app:
+
+- **`whatsapp_business_management`**: Manage WhatsApp Business accounts, including creating flows.
+- **`whatsapp_business_messaging`**: Send and receive messages via the WhatsApp Business API.
+- **`whatsapp_business_phone_number`**: Access WhatsApp Business phone numbers.
+- **`business_management`**: Manage business assets like ad accounts and pages.
+- **`pages_messaging`**: Optional if flows interact with Facebook Pages for messaging.
+
+---
+
+### 7. Obtain Necessary Credentials
+Gather the following credentials from your Meta Developers account. These will configure your WhatsApp flows:
+
+```plaintext
+WHATSAPP_BUSINESS_VERIFY_TOKEN
+WHATSAPP_BUSINESS_PHONE_NUMBER_ID
+WHATSAPP_BUSINESS_ACCESS_TOKEN
+WHATSAPP_BUSINESS_ACCOUNT_ID
+```
+
+---
+
+### 8. Create a Flow on Flow Development Playground
+Design your WhatsApp flow using the [Flow Development Playground](https://developers.facebook.com/docs/whatsapp/flows/playground/).
+
+To create a flow programmatically:
+
+```python
+from whatsapp_flows import FlowsManager
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+flows_manager = FlowsManager(
+    whatsapp_access_token=os.getenv("WHATSAPP_BUSINESS_ACCESS_TOKEN"),
+    whatsapp_account_id=os.getenv("WHATSAPP_BUSINESS_ACCOUNT_ID"),
+    whatsapp_phone_number_id=os.getenv("WHATSAPP_BUSINESS_PHONE_NUMBER_ID"),
+)
+
+try:
+    response = flows_manager.create_flow(flow_name="TEST FLOW")
+    print(response)
+except Exception as e:
+    print(e)
+```
+
+---
+
+### 9. Deploy the Middleware/Webhook
+Deploy the middleware or webhook to handle flow execution.
+
+---
+
+### 10. Configure the Webhook URL
+Configure the webhook URL in your Meta Developers account. This links your flow to WhatsApp messaging.
+
+---
+
+### 11. Create and Manage Flows
+
+#### Listing Flows:
+```python
+try:
+    response = flows_manager.list_flows()
+    print(response)
+except Exception as e:
+    print(e)
+```
+
+#### Getting Flow Details:
+```python
+try:
+    response = flows_manager.get_flow_details(flow_id="1234567890")
+    print(response)
+except Exception as e:
+    print(e)
+```
+
+---
+
+### 12. Upload Your Flow JSON
+Upload your flow JSON using the Flow Development Playground or programmatically:
+
+```python
+SYSTEM_PATH = os.getcwd()
+FLOW_JSON_FILE_PATH = os.path.join(SYSTEM_PATH, "data/flow.json")
+
+try:
+    response = flows_manager.upload_flow_json(
+        flow_id="1234567890", flow_file_path=FLOW_JSON_FILE_PATH
+    )
+    print(response)
+except Exception as e:
+    print(e)
+```
+
+---
+
+### 13. Test Your Flow
+Test your flow programmatically:
+
+```python
+try:
+    response = flows_manager.simulate_flow(flow_id="1234567890")
+    print(response)
+except Exception as e:
+    print(e)
+```
+
+---
+
+### 14. Publish Your Flow
+Publish your flow:
+
+```python
+try:
+    response = flows_manager.publish_flow(flow_id="1234567890")
+    print(response)
+except Exception as e:
+    print(e)
+```
+
+---
+
+### 15. Sending Published and Unpublished Flows
+
+#### Send a Published Flow:
+```python
+try:
+    response = flows_manager.send_published_flow(
+        flow_id="1234567890",
+        flow_cta_header_text="Amazing Shop!!",
+        flow_cta_body_text="Hello, welcome to our general shop!!",
+        flow_cta_footer_text="Click the button to continue.",
+        flow_cta_button_text="START SHOPPING",
+        recipient_phone_number="255753456789"
+    )
+    print(response)
+except Exception as e:
+    print(e)
+```
+
+#### Send an Unpublished Flow:
+```python
+try:
+    response = flows_manager.send_unpublished_flow(
+        flow_id="1234567890",
+        flow_cta_header_text="Amazing Shop!!",
+        flow_cta_body_text="Hello, welcome to our general shop!!",
+        flow_cta_footer_text="Click the button to continue.",
+        flow_cta_button_text="START SHOPPING",
+        recipient_phone_number="255753456789"
+    )
+    print(response)
+except Exception as e:
+    print(e)
+```
+
+---
+
+### 16. Update or Delete Flows
+
+#### Update Flow JSON:
+```python
+try:
+    response = flows_manager.update_flow_json(
+        flow_id="1234567890", flow_file_path=FLOW_JSON_FILE_PATH
+    )
+    print(response)
+except Exception as e:
+    print(e)
+```
+
+#### Delete a Flow:
+```python
+try:
+    response = flows_manager.delete_flow(flow_id="1234567890")
+    print(response)
+except Exception as e:
+    print(e)
+```
+
+---
+
+For additional details, check the ```examples``` folder in this libary or refer to the official [WhatsApp Flows Documentation](https://developers.facebook.com/docs/whatsapp/flows/gettingstarted) or [Meta Developers Documentation](https://developers.facebook.com/docs/whatsapp).
