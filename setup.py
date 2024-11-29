@@ -14,11 +14,10 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/misingo255/whatsapp-flows",
-    download_url="https://github.com/Neurotech-HQ/sarufi-python-sdk/archive/refs/tags/v0.0.2.tar.gz",
     author="Wilbert Misingo",
     author_email="wilbertmisingo@gmail.com",
     license="Apache",
-    packages=[""],
+    packages=["requests"],
     install_requires=["requests"],
     keywords=[
         "Whatsapp",
