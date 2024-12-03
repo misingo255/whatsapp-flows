@@ -1,4 +1,7 @@
 
+![Whatsapp Flows](assets/flows.jpg)
+
+
 # WhatsApp Flows Guide
 
 This guide outlines the steps to create and manage WhatsApp flows using the Meta Developers platform. There are two types of WhatsApp flows:
