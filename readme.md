@@ -3,6 +3,12 @@
 
 # WhatsApp Flows: Simplify WhatsApp Automation
 
+[![GitHub Stars](https://img.shields.io/github/stars/misingo255/whatsapp-flows?style=flat-square&logo=github)](https://github.com/misingo255/whatsapp-flows)
+[![GitHub Forks](https://img.shields.io/github/forks/misingo255/whatsapp-flows?style=flat-square&logo=github)](https://github.com/misingo255/whatsapp-flows)
+[![Weekly Downloads](https://img.shields.io/pypi/dw/whatsapp-flows?style=flat-square&logo=pypi)](https://pypi.org/project/whatsapp-flows/)
+[![Monthly Downloads](https://img.shields.io/pypi/dm/whatsapp-flows?style=flat-square&logo=pypi)](https://pypi.org/project/whatsapp-flows/)
+[![Total Downloads](https://img.shields.io/pypi/dt/whatsapp-flows?style=flat-square&logo=pypi)](https://pypi.org/project/whatsapp-flows/)
+
 ## Introduction
 
 **WhatsApp Flows** is a Python library designed to streamline the creation, management, and deployment of automated workflows for WhatsApp. Whether you're building interactive chatbots, managing business messaging, or orchestrating complex message flows, this library provides a developer-friendly toolkit for efficient WhatsApp automation.
