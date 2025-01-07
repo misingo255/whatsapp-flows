@@ -9,7 +9,18 @@
 [![Weekly Downloads](https://img.shields.io/pypi/dd/whatsapp-flows?style=flat-square&logo=pypi)](https://pypi.org/project/whatsapp-flows/)
 [![Weekly Downloads](https://img.shields.io/pypi/dw/whatsapp-flows?style=flat-square&logo=pypi)](https://pypi.org/project/whatsapp-flows/)
 [![Monthly Downloads](https://img.shields.io/pypi/dm/whatsapp-flows?style=flat-square&logo=pypi)](https://pypi.org/project/whatsapp-flows/)
+[![Total Downloads](https://static.pepy.tech/badge/whatsapp-flows)](https://pepy.tech/project/whatsapp-flows)
+[![PyPI Version](https://img.shields.io/pypi/v/whatsapp-flows?style=flat)](https://pypi.org/project/whatsapp-flows/)
+[![Python Versions](https://img.shields.io/pypi/pyversions/whatsapp-flows?style=flat)](https://pypi.org/project/whatsapp-flows/)
+[![License](https://img.shields.io/pypi/l/whatsapp-flows?style=flat)](https://opensource.org/licenses/Apache-2.0)
+[![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen?style=flat)](https://codecov.io/gh/misingo255/whatsapp-flows)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen?style=flat)](https://github.com/misingo255/whatsapp-flows/issues)
 
+
+
+# WhatsApp Flows
+
+# WhatsApp Flows
 
 ## Introduction
 
