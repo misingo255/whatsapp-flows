@@ -20,8 +20,6 @@
 
 # WhatsApp Flows
 
-# WhatsApp Flows
-
 ## Introduction
 
 **WhatsApp Flows** is a Python library designed to streamline the creation, management, and deployment of automated workflows for WhatsApp. Whether you're building interactive chatbots, managing business messaging, or orchestrating complex message flows, this library provides a developer-friendly toolkit for efficient WhatsApp automation.
